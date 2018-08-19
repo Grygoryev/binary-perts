@@ -1,0 +1,43 @@
+* {
+    box-sizing: border-box;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+a,
+dl,
+dt,
+dd,
+span,
+button,
+figure,
+section,
+article,
+fieldset {
+    margin: 0;
+    padding: 0;
+    box-shadow: none;
+    border: none;
+    text-decoration: none;
+}
+
+// a {
+
+// }
+
+.container {
+    max-width: 1200px;
+    min-width: 600px;
+    padding-left: 40px;
+    padding-right: 40px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.btn {
+    display: inline-block;
+}

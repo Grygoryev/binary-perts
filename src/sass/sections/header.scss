@@ -1,0 +1,22 @@
+.header {
+    
+    &__container {
+        padding-top: 70px;  
+        padding-bottom: 45px;
+        background-color: $colorDarkBlue;
+        min-height: 188px;
+
+        @include flex(flex-start, flex-end);
+    }
+
+    &__logo {
+        margin-right: 60px;
+    }
+
+    &__title {
+        @include font(25px);
+
+        color: $colorWhite;
+    }
+}
+  

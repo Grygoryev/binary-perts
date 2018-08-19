@@ -1,0 +1,17 @@
+include ../../assets/texts/news.pug
+
+section.news
+    .container
+        h2.news__title Новости
+        .news__container
+            for item in news
+                article.news-item
+                    .news-item__main
+                        img(src=item.img).news-item__photo
+                        .news-item__text-content
+                            h3.news-item__title #{item.title}
+                            p.news-item__text #{item.text}
+                            if item.text2 
+                                p.news-item__text #{item.text2}
+                    a(href="#").news-item__more-btn.btn Читать дальше
+

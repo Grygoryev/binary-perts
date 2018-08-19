@@ -1,0 +1,22 @@
+.promotions {
+    background-color: $colorGrayBlue;
+    padding-top: 47px;
+
+    &__main {
+        @include flex(space-between, flex-startm, row wrap);
+
+        width: 100%;
+    }
+
+    &__title {
+        @include font(24px, 1, bold);
+
+        margin-bottom: 15px;
+        color: rgb(255, 14, 0);
+        text-shadow: 0px 1px 0px rgba(0, 0, 0, 0.3);
+    }
+
+    &__item {
+        margin-bottom: 20px;
+    }
+}

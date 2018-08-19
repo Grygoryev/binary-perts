@@ -1,0 +1,16 @@
+- 
+    let promos = [
+        { img: 'img/promotions/1.png'},
+        { img: 'img/promotions/2.png'},
+        { img: 'img/promotions/3.png'},
+        { img: 'img/promotions/2.png'},
+        { img: 'img/promotions/1.png'}
+    ]
+
+section.promotions
+    .container
+        h2.promotions__title Акции
+        .promotions__main
+            for item in promos
+                img(src=item.img).promotions__item
+        
