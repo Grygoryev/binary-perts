@@ -8,12 +8,8 @@
         display: flex;
         flex-wrap: wrap;
 
-        /*пришлось отказаться от использования flex со space-between, так-как 
-        равномерное распределение по ширине в этом случае не достигается */
-        // @include flex(space-between, flex-start, row wrap); 
-
         @media (min-width: 620px) and (max-width: 899px) {
-                justify-content: center;
+            justify-content: center;
         }
 
         @media (min-width: 920px) and (max-width: 1199px)  {
