@@ -11,19 +11,33 @@
         margin-bottom: 5px;
     }
 
-    &__container {
+    &__container {        
+        max-width: 100%;
+        width: 100%;
+        background-color: rgba($colorBlack, 0.05);
+        overflow-x: hidden;
+
         @include respond-to-min($md) {
-            @include flex(flex-start, flex-start, row wrap);
+            @include flex(flex-start, stretch, row wrap);
         }
     }
 }
 
 .news-item {
-    padding: 10px 0 8px 0;
-    border-top: 1px solid $colorBlack;
+    padding: 10px 0 17px 0;
+    box-sizing: content-box;
+    position: relative;
+    display: flex;
+    flex-direction: column;
 
-    &:last-child {
-        border-bottom: none;
+    &:after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 1px;
+        background-color: $colorBlack;
     }
 
     @include respond-to-min($md) {
@@ -31,13 +45,31 @@
         width: 100%;
 
         &:nth-child(2n) {
-            padding-left: 45px;
+            margin-left: 40px;
+        }
+    }
+
+    @include respond-to-min($l) {
+        min-height: 165px;
+        max-width: 346px;
+
+        &:nth-child(2n) {
+            margin-left: 0;
+        }
+
+        &:nth-child(2n):not(:nth-child(4n)) {
+            padding-left: 40px;
+            padding-right: 40px;
         } 
+
+        &:last-child {
+            border: none;
+        }
     }
 
     &__main {
         @include flex();
-
+        
         margin-bottom: 15px;
     }
 
@@ -55,22 +87,30 @@
     }
 
     &__text-content {
-        min-width: 0;
+        // min-width: 0;
 
         @include respond-to-min($md) {
-            max-height: 120px;
+            max-height: 130px;
+            text-overflow: clip;
             overflow-y: hidden;
+        }
+
+        @include respond-to-min($l) {
+            max-height: 180px;
+            
         }
         
     }
 
     &__text {
-        @include font(14px, 1);
+        @include font(14px, 17px);
     }
 
     &__more-btn {
-        background-image: linear-gradient( 0, rgb(179,8,0) 0%, rgb(255,14,0) 100%);
-        min-width: 150px;
+        margin-top: auto;
+        background-image: linear-gradient( 0deg, #b30800 0%, #ff0e00 100%);
+        max-width: 150px;
+        width: 100%;
         min-height: 20px;
         text-shadow: 0px 1px 0px rgba(0, 0, 0, 0.3);
         color: $colorWhite;
@@ -79,7 +119,7 @@
         @include font(14px, 20px, bold);
 
         &:hover {
-            background-image: linear-gradient( 180, rgb(179,8,0) 0%, rgb(255,14,0) 100%);
+            background-image: linear-gradient( 180deg,  #b30800 0%, #ff0e00 100%);
         }
     }
 }

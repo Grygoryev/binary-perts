@@ -25,13 +25,12 @@ fieldset {
     text-decoration: none;
 }
 
-// a {
-
-// }
+body {
+    min-width: 600px;
+}
 
 .container {
     max-width: 1200px;
-    min-width: 600px;
     padding-left: 40px;
     padding-right: 40px;
     width: 100%;

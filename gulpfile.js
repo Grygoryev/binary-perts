@@ -14,7 +14,10 @@ gulp.task('pug', () => {
 gulp.task('sass', () => {
     return gulp.src('src/sass/*.scss')
         .pipe(sass())
-        .pipe(autoprefixer())
+        .pipe(autoprefixer({
+            browsers: ['last 2 versions'],
+            cascade: false
+        }))
         .pipe(gulp.dest('build/css'))
 })
 
