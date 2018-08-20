@@ -14,11 +14,10 @@
     &__container {        
         max-width: 100%;
         width: 100%;
-        background-color: rgba($colorBlack, 0.05);
         overflow-x: hidden;
 
         @include respond-to-min($md) {
-            @include flex(flex-start, stretch, row wrap);
+            @include flex(space-between, stretch, row wrap);
         }
     }
 }
@@ -49,22 +48,25 @@
         }
     }
 
+    @include respond-to-min($ls) {
+        &:nth-child(2n) {
+            margin-right: 120px;
+        }
+    }
+
     @include respond-to-min($l) {
         min-height: 165px;
         max-width: 346px;
 
         &:nth-child(2n) {
             margin-left: 0;
+            margin-right: 0;
         }
 
-        &:nth-child(2n):not(:nth-child(4n)) {
-            padding-left: 40px;
-            padding-right: 40px;
-        } 
-
-        &:last-child {
-            border: none;
-        }
+        // &:nth-child(2n):not(:nth-child(4n)) {
+        //     padding-left: 40px;
+        //     padding-right: 40px;
+        // }
     }
 
     &__main {
@@ -87,7 +89,7 @@
     }
 
     &__text-content {
-        // min-width: 0;
+        min-width: 0;
 
         @include respond-to-min($md) {
             max-height: 130px;
@@ -99,7 +101,6 @@
             max-height: 180px;
             
         }
-        
     }
 
     &__text {

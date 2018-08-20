@@ -5,10 +5,20 @@
 
     &__main {
         width: 100%;
+        display: flex;
+        flex-wrap: wrap;
 
         /*пришлось отказаться от использования flex со space-between, так-как 
         равномерное распределение по ширине в этом случае не достигается */
         // @include flex(space-between, flex-start, row wrap); 
+
+        @media (min-width: 620px) and (max-width: 899px) {
+                justify-content: center;
+        }
+
+        @media (min-width: 920px) and (max-width: 1199px)  {
+            justify-content: space-around;
+    }
     }
 
     &__title {
@@ -23,6 +33,7 @@
         display: inline-block;
         margin-bottom: 20px;
         margin-right: 40px;
+        min-width: 20px;
         max-width: 240px;
         max-height: 123px;
         width: 100%;
@@ -59,20 +70,20 @@
         @include respond-to-min($md) {
             margin-bottom: 35px;
             max-width: 246px;
-            width: 100%;
 
             &:nth-of-type(3n) {
                 margin-right: 0;
             }
         }
 
-        @include respond-to-min($l) {
-            max-width: 250px;
-            width: 100%;
-
+        @include respond-to-min($ls) {
             &:nth-of-type(3n) {
                 margin-right: 40px;
             }
+        }
+
+        @include respond-to-min($l) {
+            max-width: 250px;
 
             &:nth-of-type(4n) {
                 margin-right: 0;
