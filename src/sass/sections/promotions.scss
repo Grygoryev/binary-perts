@@ -1,9 +1,10 @@
 .promotions {
     background-color: $colorGrayBlue;
     padding-top: 47px;
+    padding-bottom: 20px;
 
     &__main {
-        @include flex(space-between, flex-startm, row wrap);
+        @include flex(flex-start, flex-start, row wrap);
 
         width: 100%;
     }
@@ -17,6 +18,26 @@
     }
 
     &__item {
+        margin-right: 41px;
         margin-bottom: 20px;
+
+        @include respond-to-min($md) {
+            margin-bottom: 35px;
+
+            &:nth-child(3n) {
+                margin-right: 0;
+            }
+        }
+
+        @include respond-to-min($l) {
+            
+            &:nth-child(3n) {
+                margin-right: 41px;
+            }
+
+            &:nth-child(4n) {
+                margin-right: 0;
+            }
+        }
     }
 }

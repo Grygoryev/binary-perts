@@ -1,5 +1,5 @@
 @mixin respond-to-min($value) {
-    @media (max-width: $value) {
+    @media (min-width: $value) {
       @content
     }
   }

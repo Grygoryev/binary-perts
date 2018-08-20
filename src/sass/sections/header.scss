@@ -1,12 +1,16 @@
 .header {
+    background-color: $colorDarkBlue;
     
     &__container {
         padding-top: 70px;  
         padding-bottom: 45px;
-        background-color: $colorDarkBlue;
         min-height: 188px;
 
         @include flex(flex-start, flex-end);
+
+        @include respond-to-min($md) {
+            align-items: center;
+        }
     }
 
     &__logo {
@@ -18,5 +22,10 @@
 
         color: $colorWhite;
     }
+
+    &__title-br {
+        @include respond-to-min($md) {
+            display: none;
+        }
+    }
 }
-  
